@@ -3,6 +3,7 @@ package com.bolsadeideas.springboot.web.app.controllers;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +13,13 @@ import com.bolsadeideas.springboot.web.app.models.Usuario;
 
 @Controller
 public class IndexController {
+	
+	@Value("${texto.indexcontroller.index.titulo}")// con esta anotación podemos traer datos desde el archivo application.properties
+	private String titulo;
 
 	@GetMapping({"/","/index", "/home"})
 	public String index(Model model) {
-		model.addAttribute("titulo", "Bienvenidos a Spring boot");
+		model.addAttribute("titulo", this.titulo);
 		return "index";
 	}
 	
