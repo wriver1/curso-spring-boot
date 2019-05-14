@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Vínculos de parámetros</title>
+</head>
+<body>
+	<ul>
+		<li><a th:href="@{/params/string(texto='primer vínculo')}">vínculo 1</a></li>
+		<li><a th:href="@{/params/string(texto='segundo vínculo')}">vínculo 2</a></li>
+	</ul>
+</body>
+</html>
