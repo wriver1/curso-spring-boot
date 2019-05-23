@@ -42,7 +42,7 @@ public class Cliente implements Serializable {
 	
 	@Column(name="fecha_nacimiento", nullable = false)
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd-MM-yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date fechaNacimiento;
 
